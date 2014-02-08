@@ -1,0 +1,16 @@
+
+
+{{set . "title" "Home"}}
+{{set . "description" "Main page for the Snappshot app"}}
+{{template "header.html" .}}
+
+
+
+<img class="img-polaroid" src="{{url "Snappshot.Image" .placed_id }}"  />
+
+
+
+
+{{template "backgrounds.html" .}}
+
+{{template "footer.html" .}}

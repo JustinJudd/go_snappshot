@@ -1,0 +1,32 @@
+
+
+{{set . "title" "Home"}}
+{{set . "description" "Main page for the Snappshot app"}}
+{{template "header.html" .}}
+
+
+
+<div class="span8 text-center">
+<img class="img-polaroid" src="/public/images/backgrounds/{{ .image_id }}.jpg"  />
+</div>
+
+
+<div class="span4 text-center">
+	<form id="fileupload" action="{{ url "Snappshot.Uploaded" .image_id }}" method="POST" enctype="multipart/form-data">
+	<!-- {% csrf_token %} -->
+
+	<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-new thumbnail" style=" height: 400px;"><img src="{{url "Snappshot.Screenshot" .xml_data.Device.Resolution.Width}}x{{.xml_data.Device.Resolution.Height}}" /></div>
+  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 250px; max-height: 400px; line-height: 20px;"></div>
+  <div class="">
+    <span class="btn btn-file btn-info"><span class="fileupload-new"><i class="icon-picture icon-white"></i> Select/Drop image</span><span class="fileupload-exists"><i class="icon-picture icon-white"></i> Change image</span><input type="file" name="file_input" /></span>
+    <button type="submit" name="submit" class="btn btn-primary fileupload-exists"><i class="icon-upload icon-white"></i> <span>Place In</span> </button>
+  </div>
+</div>
+</form>
+</div>
+
+
+{{template "backgrounds.html" .}}
+
+{{template "footer.html" .}}

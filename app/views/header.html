@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{.description }}" />
+    <meta name="author" content="Justin Judd" />
+
+
+    {{/*<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">*/}}
+    <link href="/public/css/readable-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/font-awesome.min.css" />
+    <link href="/public/css/bootstrap-fileupload.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/public/css/custom_bootstrap.css" />
+
+    <style type="text/css">
+      body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      /*.navbar .nav li a, .navbar .brand {
+        color: #F15700;
+  -webkit-mask-image: -webkit-gradient(linear, left top, 
+    left bottom, from(rgba(0,0,0,.3)), to(rgba(0,0,0,1)));
+      }*/
+
+      .navbar .nav li  {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <link href="/public/css/bootstrap-responsive.min.css " rel="stylesheet" />
+
+
+    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png">
+
+
+    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+   {{/*<script src="/public/js/libs/jquery-1.9.1.min.js"></script>*/}}
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/bootstrap-fileupload.min.js"></script>
+    <script type="text/javascript" src="/public/js/bootstrap-filestyle.min.js"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+
+
+  <body>
+    <div class="navbar  navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="{{url "Snappshot.Index"}}">Snappshot</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+            <!-- Put nav items here -->
+            </ul>
+            <ul class="nav pull-right inline">
+            <li><a href="https://github.com/JustinJudd/go_snappshot"><i class="icon-github"></i></a></li>
+            <li><a href="{{url "Snappshot.FAQ"}}"><i class="icon-question-sign"></i></a></li>
+            
+            </ul>
+     
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>

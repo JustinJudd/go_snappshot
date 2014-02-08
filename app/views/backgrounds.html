@@ -1,0 +1,17 @@
+<div class="row-fluid">
+  <div class="span12 scrollable well scrollbar">
+    <div class="row-fluid">
+    <ul class="thumbnails">
+      {{with $backgrounds := .backgrounds}}
+      {{ range $_, $imageplace := $backgrounds.GetImageList }}
+        <li class="span2" id="scrollitem{{$imageplace}}">
+          <a href="{{ url "Snappshot.Upload" $imageplace}}" class="thumbnail{{if $backgrounds.GetActive $imageplace }} active{{end}}">
+            <img data-src="holder.js/160x120" src="/public/images/backgrounds/thumbnails/{{$imageplace}}.jpg"  />            
+          </a>
+        </li>
+     {{end}}
+     {{end}}
+    </ul>
+  </div>
+  </div>
+</div>
