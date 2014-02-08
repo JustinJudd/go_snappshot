@@ -11,7 +11,7 @@ import (
 
 	"encoding/xml"
 	"io/ioutil"
-	"github.com/justinjudd/go_snappshot/app/routes"
+	"github.com/JustinJudd/go_snappshot/app/routes"
 
 	"github.com/gographics/imagick/imagick"
 
@@ -168,7 +168,7 @@ func isImage(name string) bool {
 
 // Create Backgrounds by loading all background images and theur data
 func getImageRange(place int) Backgrounds {
-	imageplace := "src/github.com/justinjudd/go_snappshot/public/images/backgrounds"
+	imageplace := "src/github.com/JustinJudd/go_snappshot/public/images/backgrounds"
 	imagedir, _ := os.Open(imageplace)
 	files, _ := imagedir.Readdir(-1)
 	var images []int
@@ -194,7 +194,7 @@ func loadBackgroundXML(image_id string) Result {
 
 	v := Result{}
 
-	xml_path := "src/github.com/justinjudd/go_snappshot/public/images/backgrounds/" + image_id + ".xml"
+	xml_path := "src/github.com/JustinJudd/go_snappshot/public/images/backgrounds/" + image_id + ".xml"
 	data, err := ioutil.ReadFile(xml_path)
 	if err != nil {
 		println("Error reading background xml for ", image_id, ":", err.Error())
@@ -249,7 +249,7 @@ func placeit(image_id string, xml_data Result, image []byte) string {
 	defer back_mw.Destroy()
 
 	mw.ReadImageBlob(image)
-	back_mw.ReadImage("src/github.com/justinjudd/go_snappshot/public/images/backgrounds/" + image_id + ".jpg")
+	back_mw.ReadImage("src/github.com/JustinJudd/go_snappshot/public/images/backgrounds/" + image_id + ".jpg")
 
 	mw.SetImageVirtualPixelMethod(imagick.VIRTUAL_PIXEL_TRANSPARENT)
 	mw.DistortImage(imagick.DISTORTION_PERSPECTIVE, result, true)
